@@ -3,6 +3,8 @@ services:
   backend:
     build: ./backend
     container_name: backend
+    ports:
+      - "5000:5000"   # Expose backend port 5000 to host
   frontend:
     image: nginx:alpine
     container_name: frontend
