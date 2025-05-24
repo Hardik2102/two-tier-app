@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/Hardik2102/two-tier-app.git'
+                git branch: 'main', url: 'https://github.com/Hardik2102/two-tier-app.git'
 
             }
         }
