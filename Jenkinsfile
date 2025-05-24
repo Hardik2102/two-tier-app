@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        COMPOSE_DOCKER_CLI_BUILD = '1'  // Optional: speeds up builds with BuildKit
-    }
     stages {
         stage('Clone') {
             steps {
@@ -11,12 +8,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker-compose build'  // or 'docker compose build' if using new CLI
+                sh 'docker compose build'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker compose up -d'
             }
         }
     }
